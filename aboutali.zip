@@ -1,0 +1,221 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://hub.chabokan.net/" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    
+        <!-- Google Tag Manager -->
+        <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-WFLWKKS');</script>
+        <!-- End Google Tag Manager -->
+    
+    
+        <script>
+            document.addEventListener("DOMContentLoaded", function (event) {
+                if (document.getElementsByClassName("theme-auto").length > 0) {
+                    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                        document.body.classList.remove('light-theme');
+                        document.body.classList.remove('theme-auto');
+                        document.body.classList.add('dark-theme');
+                    } else {
+                        document.body.classList.remove('dark-theme');
+                        document.body.classList.remove('theme-auto');
+                        document.body.setAttribute("class", "light-theme");
+                    }
+                }
+
+            });
+
+        </script>
+    
+    
+        <link rel="stylesheet" href="/static/assets/Base/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/static/assets/Plugin/fontawesome/css/all.css"/>
+        <link rel="stylesheet" href="/static/assets/Plugin/hamberger%20menu/hamburgers.min.css">
+        <link rel="stylesheet" href="/static/assets/Base/css/fontiran.css">
+        <link rel="stylesheet" href="/static/assets/Base/css/sweetalert2.css">
+        <link rel="stylesheet" href="/static/assets/Plugin/select/bootstrap-select.min.css">
+        <link rel="stylesheet" href="/static/assets/Base/css/intlTelInput.min.css">
+        <link rel="stylesheet" href="/static/assets/Base/scss/main.css">
+        
+            <link rel="stylesheet" href="/static/assets/Base/scss/rtl.css">
+        
+        
+    
+
+</head>
+
+<body class=" theme-auto  rtl-theme">
+<div class="dm-register-body">
+    <!-- ----------------------- HEADER ----------------------- -->
+    <header></header>
+    <!-- ----------------------- HEADER ----------------------- -->
+
+    <!-- ----------------------- MAIN ----------------------- -->
+    <main class="w-100">
+        <div class="container">
+            <div class="row justify-content-center">
+                
+    <div class="col-12 text-center mt-5">
+        <h1>چیزی یافت نشد.</h1>
+    </div>
+
+            </div>
+        </div>
+    </main>
+    <!-- ----------------------- MAIN ----------------------- -->
+
+    <!-- ----------------------- MAIN ----------------------- -->
+    
+
+
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="dm-footer">
+                    <div class="dm-footer--logo mb-3">
+                        
+                            <img src="https://chabokan.net/wp-content/uploads/2023/10/Orrange-Logo.svg"
+                                 class="img-fluid ml-1" width="80"
+                                 alt="چابکان">
+                        
+                    </div>
+                    <p class="mb-2">
+                        تمام حقوق مادی و معنوی برای چابکان محفوظ می باشد.
+                    </p>
+                    <p class="mb-0" style="direction: ltr">
+                        1399 - 1402
+                    </p>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="footer-languages">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-md-3">
+                            <p>زبان:</p>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <ul>
+                                
+                                    <li>
+                                        
+                                            <span>فارسی</span>
+                                        
+                                    </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+    <!-- ----------------------- MAIN ----------------------- -->
+
+</div>
+
+    <script src="/static/assets/Base/js/jquery-3.5.1.min.js"></script>
+    <script src="/static/assets/Base/js/popper.min.js"></script>
+    <script src="/static/assets/Base/js/bootstrap.min.js"></script>
+    <script src="/static/assets/Plugin/select/bootstrap-select.min.js"></script>
+    <script src="/static/assets/Base/js/sweetalert2.js"></script>
+    <script src="/static/assets/Base/js/intlTelInput.min.js"></script>
+    <script src="/static/assets/Base/js/parsley.min.js"></script>
+    <script src="/static/assets/Base/js/components/functions.js?v=f659b731"></script>
+    
+        <script src="/static/assets/Base/js/parsley-fa.js"></script>
+    
+    <script src="/static/assets/Base/js/main.js"></script>
+    <script>
+        $(document).ready(function () {
+            let errorMsg = document.querySelector("#error-msg");
+            let validMsg = document.querySelector("#valid-msg");
+            let errorMap = ["شماره موبایل نامعتبر است.", "کد کشور اشتباه است.", "طول شماره موبایل اشتباه است.", "طول شماره موبایل اشتباه است.", "شماره موبایل معتبر نیست."];
+
+            let input = document.querySelector("#phone , #id_phone");
+            if (input) {
+                window.iti = window.intlTelInput(input, {
+                    initialCountry: "auto",
+                    separateDialCode: true,
+                    preferredCountries: ['ir', 'tr'],
+                    hiddenInput: "full_phone",
+                    geoIpLookup: function (callback) {
+                        $.get('https://ipinfo.io', function () {
+                        }, "jsonp").always(function (resp) {
+                            var countryCode = (resp && resp.country) ? resp.country : "ir";
+                            callback(countryCode);
+                        });
+                    },
+                    utilsScript: "/static/assets/Base/js/utils.js" // just for formatting/placeholders etc
+                });
+
+            }
+
+
+            var reset = function () {
+                if (input) {
+                    input.classList.remove("error");
+                }
+                errorMsg.innerHTML = "";
+                errorMsg.classList.add("d-none");
+                if (validMsg) {
+                    validMsg.classList.add("d-none");
+                }
+            };
+            if (input) {
+                // on blur: validate
+                input.addEventListener('blur', function () {
+                    reset();
+                    if (input.value.trim()) {
+                        if (window.iti.isValidNumber()) {
+                            
+                        } else {
+                            input.classList.add("error");
+                            var errorCode = window.iti.getValidationError();
+                            errorMsg.innerHTML = errorMap[errorCode];
+                            errorMsg.classList.remove("d-none");
+                        }
+                    }
+                });
+
+                // on keyup / change flag: reset
+                input.addEventListener('change', reset);
+                input.addEventListener('keyup', reset);
+            }
+        });
+
+
+    </script>
+    
+
+
+</body>
+
+</html>
